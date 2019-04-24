@@ -1,9 +1,17 @@
-id: home-page
 fields:
   pageTitle: Welcome to Sitecore JSS
 placeholders:
   jss-main:
+  - componentName: Hero
+    fields:
+        heading: Hero
+        image:
+            src: /static/hipster.jpg
   - componentName: ContentBlock
     fields:
       heading: Welcome
       content: to Sitecore JavaScript Services
+  - componentName: ContentBlock
+    fields:
+      heading: second content block
+      content: some text

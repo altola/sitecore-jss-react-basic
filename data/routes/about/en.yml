@@ -1,0 +1,8 @@
+fields:
+  pageTitle: About
+placeholders:
+  jss-main:
+  - componentName: ContentBlock
+    fields:
+      heading: About
+      content: Sitecore JavaScript Services
