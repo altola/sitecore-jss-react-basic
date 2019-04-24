@@ -1,5 +1,5 @@
 id: shared-hero
-componentName: Hero
+componentName: MegaHero
 fields:
   heading: Hero title
   image:

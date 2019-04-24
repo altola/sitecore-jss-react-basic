@@ -1,11 +1,11 @@
 import React from 'react';
 import { Text, Image } from '@sitecore-jss/sitecore-jss-react';
 
-const Hero = (props) => (
+const MegaHero = (props) => (
   <div>
-    <Text field={props.fields.heading} />
+    <Text tag={"h1"} field={props.fields.heading} />
     <Image field={props.fields.image} />
   </div>
 );
 
-export default Hero;
+export default MegaHero;
