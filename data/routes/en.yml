@@ -1,12 +1,10 @@
 fields:
   pageTitle: Welcome to Sitecore JSS
 placeholders:
+  jss-nav:
+    - id: nav
   jss-main:
-  - componentName: Hero
-    fields:
-        heading: Hero
-        image:
-            src: /static/hipster.jpg
+  - id: shared-hero
   - componentName: ContentBlock
     fields:
       heading: Welcome

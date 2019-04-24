@@ -12,7 +12,7 @@
     "sitecoreConfigPath": "/App_Config/Include/zzz",
     "graphQLEndpointPath": "/api/jssreactstarter",
     "language": "en",
-    "cert": ""
+    "cert": "F6:F5:54:D1:B2:72:21:BD:A5:3A:82:0B:2F:32:59:AB:68:50:BC:EC"
   },
   "engines": {
     "node": ">=8.1",

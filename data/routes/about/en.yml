@@ -1,7 +1,10 @@
 fields:
   pageTitle: About
 placeholders:
+  jss-nav:
+  - id: nav
   jss-main:
+  - id: shared-hero
   - componentName: ContentBlock
     fields:
       heading: About
