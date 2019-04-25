@@ -16,7 +16,7 @@ import './assets/app.css';
   but components added to inner placeholders are route-specific.
 */
 
-const Layout = ({ route }) => (
+const Layout = ({ route, context }) => (
   <React.Fragment>
     {/* react-helmet enables setting <head> contents, like title and OG meta tags */}
     <Helmet>
@@ -38,7 +38,7 @@ const Layout = ({ route }) => (
 
     {/* root placeholder for the app, which we add components to using route data */}
     <div className="container">
-      <Placeholder name="jss-main" rendering={route} route={route} />
+      <Placeholder name="jss-main" rendering={route} route={route} context={context} />
     </div>
   </React.Fragment>
 );

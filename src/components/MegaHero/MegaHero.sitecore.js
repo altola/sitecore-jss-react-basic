@@ -12,12 +12,10 @@ export default function(manifest) {
     icon: SitecoreIcon.DocumentTag,
     fields: [
       { name: 'heading', type: CommonFieldTypes.SingleLineText },
+      { name: 'subheading', type: CommonFieldTypes.SingleLineText },
+      { name: 'text', type: CommonFieldTypes.RichText },
+      { name: 'cta', type: CommonFieldTypes.GeneralLink },
       { name: 'image', type: CommonFieldTypes.Image },
     ],
-    /*
-    If the component implementation uses <Placeholder> or withPlaceholder to expose a placeholder,
-    register it here, or components added to that placeholder will not be returned by Sitecore:
-    placeholders: ['exposed-placeholder-name']
-    */
   });
 }
