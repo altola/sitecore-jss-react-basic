@@ -22,10 +22,11 @@ class ProductList extends React.Component {
         }
         return response.json();
       })
-      .then(stories => {
-        debugger;
-        const products = stories.value;
-        this.setState({ products: products, loading: false });
+      .then(data => {
+        const products = data.value;
+        if (products) {
+          this.setState({ products: products, loading: false });
+        }
       });
   }
 
@@ -36,7 +37,6 @@ class ProductList extends React.Component {
       return <h1>Loading products...</h1>;
     }
 
-    debugger;
     return (
       <Fragment>
         <Text tag="h1" field={fields.heading} className="display-3" />
