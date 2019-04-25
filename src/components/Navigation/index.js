@@ -42,28 +42,26 @@ class Navigation extends React.Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              {navigationItems.map((navItem, index) => (
-                <NavItem key={index}>
-                  <NavLink className="nav-link" to={navItem.path}>{navItem.name}</NavLink>
-                </NavItem>
-              ))}
-              {/* <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Options
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>
-                    Option 1
-                  </DropdownItem>
-                  <DropdownItem>
-                    Option 2
-                  </DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>
-                    Reset
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown> */}
+              {navigationItems.map((navItem, index) => {
+                return navItem.children ? (
+                  <UncontrolledDropdown nav inNavbar key={index}>
+                    <DropdownToggle nav caret>
+                      {navItem.name}
+                    </DropdownToggle>
+                    <DropdownMenu right>
+                      {navItem.children.map((child, index) => (
+                        <DropdownItem key={index}>{child.name}</DropdownItem>
+                      ))}
+                    </DropdownMenu>
+                  </UncontrolledDropdown>
+                ) : (
+                  <NavItem key={index}>
+                    <NavLink className="nav-link" to={navItem.path}>
+                      {navItem.name}
+                    </NavLink>
+                  </NavItem>
+                );
+              })}
             </Nav>
           </Collapse>
         </Navbar>
