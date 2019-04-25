@@ -28,8 +28,8 @@ class Navigation extends React.Component {
     });
   }
   render() {
-    const { context } = this.props;
-    const navigationItems = context.navigation[0].children;
+    const { fields } = this.props;
+    const navigationItems = fields.data.item.navItems;
     debugger;
     return (
       <div>
@@ -42,26 +42,33 @@ class Navigation extends React.Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              {navigationItems.map((navItem, index) => {
-                return navItem.children ? (
-                  <UncontrolledDropdown nav inNavbar key={index}>
-                    <DropdownToggle nav caret>
-                      {navItem.name}
-                    </DropdownToggle>
-                    <DropdownMenu right>
-                      {navItem.children.map((child, index) => (
-                        <DropdownItem key={index}>{child.name}</DropdownItem>
-                      ))}
-                    </DropdownMenu>
-                  </UncontrolledDropdown>
-                ) : (
-                  <NavItem key={index}>
-                    <NavLink className="nav-link" to={navItem.path}>
-                      {navItem.name}
-                    </NavLink>
-                  </NavItem>
-                );
-              })}
+              {navigationItems
+                .filter(item => item.pageTitle)
+                .map((navItem, index) => {
+                  return navItem.children && navItem.children.length > 0 ? (
+                    <UncontrolledDropdown nav inNavbar key={index}>
+                      <DropdownToggle nav caret>
+                        {navItem.pageTitle.value}
+                      </DropdownToggle>
+                      <DropdownMenu right>
+                        {navItem.children
+                          .map((child, index) => (
+                            <DropdownItem key={index}>
+                              <NavLink className="nav-link" to={child.url}>
+                                {child.pageTitle.value}
+                              </NavLink>
+                            </DropdownItem>
+                          ))}
+                      </DropdownMenu>
+                    </UncontrolledDropdown>
+                  ) : (
+                    <NavItem key={index}>
+                      <NavLink className="nav-link" to={navItem.url}>
+                        {navItem.pageTitle.value}
+                      </NavLink>
+                    </NavItem>
+                  );
+                })}
             </Nav>
           </Collapse>
         </Navbar>
