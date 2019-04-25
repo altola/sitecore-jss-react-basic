@@ -15,6 +15,26 @@ placeholders:
         placeholders:
           jss-column:
           - componentName: Tile
+            name: left-tile
+            displayName: Left Left Tile
+            fields:
+              title: left left tile
+              subtitle: subtitle
+              text: text
+              image:
+                src: /static/cph.png
+                alt: Nyhavn
+              link:
+                href: /about
+                text: Learn more
+      - componentName: Column
+        params:
+          size: "4"
+        placeholders:
+          jss-column:
+          - componentName: Tile
+            name: left-tile
+            displayName: Left Tile
             fields:
               title: left tile
               subtitle: subtitle
@@ -31,22 +51,8 @@ placeholders:
         placeholders:
           jss-column:
           - componentName: Tile
-            fields:
-              title: left tile
-              subtitle: subtitle
-              text: text
-              image:
-                src: /static/cph.png
-                alt: Nyhavn
-              link:
-                href: /about
-                text: Learn more
-      - componentName: Column
-        params:
-          size: "4"
-        placeholders:
-          jss-column:
-          - componentName: Tile
+            name: right-tile
+            displayName: Right Tile
             fields:
               title: left tile
               subtitle: subtitle
