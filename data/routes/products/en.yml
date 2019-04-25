@@ -1,0 +1,22 @@
+fields:
+  pageTitle: Products
+placeholders:
+  jss-nav:
+    - id: nav
+  jss-main:
+  - componentName: ProductList
+    params:
+      top: 2
+    fields:
+      heading: Featured Products
+      products:
+          - name: Product1
+            displayName: Product 1
+            template: product-item
+            fields:
+                productName: Product One
+          - name: Product2
+            displayName: Product2
+            template: product-item
+            fields:
+                productName: Product Two

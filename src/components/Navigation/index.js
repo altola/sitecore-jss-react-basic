@@ -29,8 +29,8 @@ class Navigation extends React.Component {
   }
   render() {
     const { fields } = this.props;
-    const navigationItems = fields.data.item.navItems;
-    debugger;
+    const navigationItems = fields.data ? fields.data.item.navItems : [];
+
     return (
       <div>
         <Navbar color="light" light expand="md">
