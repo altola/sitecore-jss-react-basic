@@ -5,22 +5,45 @@ placeholders:
     - id: nav
   jss-main:
   - id: shared-hero
+  - componentName: ThreeColumn
+    placeholders:
+      jss-left-col:
+      - componentName: Tile
+        fields:
+          title: left tile
+          subtitle: subtitle
+          text: text
+          image:
+            src: /static/cph.png
+            alt: Nyhavn
+          link:
+            href: /about
+            text: Learn more
+      jss-mid-col:
+      - componentName: Tile
+        fields:
+          title: middle tile
+          subtitle: subtitle
+          text: text
+          image:
+            src: /static/cph.png
+            alt: Nyhavn
+          link:
+            href: /about
+            text: Learn more
+      jss-right-col:
+      - componentName: Tile
+        fields:
+          title: right tile
+          subtitle: subtitle
+          text: text
+          image:
+            src: /static/cph.png
+            alt: Nyhavn
+          link:
+            href: /about
+            text: Learn more
   - componentName: ContentBlock
     fields:
       heading: Welcome
       content: to Sitecore JavaScript Services
-  - componentName: ContentBlock
-    fields:
-      heading: second content block
-      content: some text
-  - componentName: Tile
-    fields:
-        title: title
-        subtitle: subtitle
-        text: text
-        image:
-            src: /static/cph.png
-            alt: Nyhavn
-        link:
-            href: /about
-            text: Learn more
