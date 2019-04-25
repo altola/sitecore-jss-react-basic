@@ -13,3 +13,14 @@ placeholders:
     fields:
       heading: second content block
       content: some text
+  - componentName: Tile
+    fields:
+        title: title
+        subtitle: subtitle
+        text: text
+        image:
+            src: /static/cph.png
+            alt: Nyhavn
+        link:
+            href: /about
+            text: Learn more

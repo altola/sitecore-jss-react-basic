@@ -16,7 +16,6 @@ function Cta(ctaField, pageEditing) {
 const MegaHero = ({ fields, context }) => (
   <div>
     <Jumbotron>
-      <h1>{JSON.stringify(context.pageEditing)}</h1>
       <Text tag="h1" field={fields.heading} className="display-3" />
       <Text tag="p" field={fields.subheading} className="lead" />
       <hr className="my-2" />
