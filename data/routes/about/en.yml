@@ -4,7 +4,7 @@ placeholders:
   jss-main:
   - componentName: ContentBlock
     fields:
-      heading: Hello asdsad asdsad
+      heading: About
       content: World asdasdasd
       featuredImage:
         src: /data/media/img/jss_logo.png
