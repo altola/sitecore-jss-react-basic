@@ -1,9 +1,0 @@
-id: shared-hero
-componentName: MegaHero
-fields:
-  heading: Hero title
-  subheading: subheading
-  text: <p>some <b>rich</b> text</p>
-  cta:
-    href: /about
-    text: About
