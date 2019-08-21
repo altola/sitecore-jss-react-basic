@@ -1,0 +1,9 @@
+{
+  "sitecore": {
+    "instancePath": "",
+    "apiKey": "#{APIKEY}#",
+    "deploySecret": "",
+    "deployUrl": "",
+    "layoutServiceHost": "#{LAYOUTSERVICE_HOST}#"
+  }
+}
