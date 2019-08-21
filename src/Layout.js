@@ -7,6 +7,7 @@ import Helmet from 'react-helmet';
 // without needing extra CSS in the sample app. Remove it in package.json as well if it's removed here.
 import 'bootstrap/dist/css/bootstrap.css';
 import './assets/app.css';
+import NavBar from './components/NavBar';
 
 /*
   APP LAYOUT
@@ -34,8 +35,8 @@ const Layout = ({ route, context }) => (
     */}
     <VisitorIdentification />
 
-    <Placeholder name="jss-nav" rendering={route} route={route} context={context} />
-
+    {/* <Placeholder name="jss-nav" rendering={route} route={route} context={context} /> */}
+    <NavBar context={context} />
     {/* root placeholder for the app, which we add components to using route data */}
     <div className="container">
       <Placeholder name="jss-main" rendering={route} route={route} context={context} />
