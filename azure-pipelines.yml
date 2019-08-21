@@ -13,6 +13,13 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      Write-Host "Activating scjssconfig"
+      
+      Copy-Item ".\scjssconfig.json.ci" "scjssconfig.json"
 - master
 
 pool:
