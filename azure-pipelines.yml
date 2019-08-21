@@ -1,4 +1,13 @@
 # Node.js with React
+- task: replacetokens@3
+  inputs:
+    targetFiles: '**/scjssconfig.json.ci'
+    encoding: 'auto'
+    writeBOM: true
+    actionOnMissing: 'warn'
+    keepToken: false
+    tokenPrefix: '#{'
+    tokenSuffix: '}#'
 # Build a Node.js project that uses React.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
