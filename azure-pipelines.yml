@@ -36,9 +36,13 @@ steps:
     npm run jss build
   displayName: 'npm install and build'
 
+- task: CopyFiles@2
+  inputs:
+    contents: 'build/**'
+    targetFolder: $(Build.ArtifactStagingDirectory)
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: '$(Build.SourcesDirectory)\build'
+    rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
     includeRootFolder: true
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
