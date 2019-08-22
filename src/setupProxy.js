@@ -14,6 +14,7 @@ module.exports = (app) => {
     // when in connected mode we want to proxy Sitecore paths
     // off to Sitecore
 
+    app.use(proxy('/api/ge', { target: "http://localhost:4000" }));
     app.use(proxy('/sitecore', { target: config.sitecoreApiHost }));
     // media items
     app.use(proxy('/-', { target: config.sitecoreApiHost }));
