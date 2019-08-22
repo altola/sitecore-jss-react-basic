@@ -4,15 +4,16 @@ import { Text, RichText, Link } from "@sitecore-jss/sitecore-jss-react";
 import { NavLink } from "react-router-dom";
 
 const Jumbotron = ({ fields, context }) => {
+  if (!fields) {
+    return;
+  }
+  if (!context) {
+    return;
+  }
+
   const { pageEditing } = context;
-  const {
-    title,
-    subtitle,
-    description,
-    buttonLink,
-    buttonType,
-    buttonTitle
-  } = fields;
+  const { title, subtitle, description, buttonLink, buttonType } = fields;
+
   return (
     <div>
       <ReactstrapJumbotron>
@@ -27,7 +28,10 @@ const Jumbotron = ({ fields, context }) => {
               className={`btn btn-${buttonType.value}`}
             />
           ) : (
-            <NavLink to={buttonLink.value.href} className={`btn btn-${buttonType.value}`}>
+            <NavLink
+              to={buttonLink.value.href}
+              className={`btn btn-${buttonType.value}`}
+            >
               {buttonLink.value.title}
             </NavLink>
           )}
