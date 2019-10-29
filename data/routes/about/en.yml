@@ -1,17 +1,13 @@
 fields:
-  pageTitle: Welcome to Sitecore JSS
+  pageTitle: About
 placeholders:
   jss-main:
     - componentName: Jumbo
       fields:
-        heading: Hello, world!
+        heading: About
         leadText: This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to featured content or information.
         description: It uses utility classes for typography and spacing to space content out within the larger container.
         link:
           href: /about
           text: Learn more
         buttonType: primary
-    - componentName: ContentBlock
-      fields:
-        heading: Hello
-        content: World
