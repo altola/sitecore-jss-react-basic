@@ -1,0 +1,9 @@
+{
+  "sitecore": {
+    "instancePath": "C:\\inetpub\\wwwroot\\jssbootcamp.www",
+    "apiKey": "{5DE66060-AAC0-4CD1-814F-47F6041C29BF}",
+    "deploySecret": "j75tzuhrad41shp6ka05915sw7pftz0mxfn4lh6e0bj",
+    "deployUrl": "https://www.jssbootcamp.local/sitecore/api/jss/import",
+    "layoutServiceHost": ""
+  }
+}

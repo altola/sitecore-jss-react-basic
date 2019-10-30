@@ -12,7 +12,7 @@ const Jumbo = ({ fields, context }) => {
     return null;
   }
   const { heading, leadText, description, link, buttonType } = fields;
-  const { pageEditing } = context;
+  const { pageEditing, membership } = context;
 
   let linkComponent = (
     <NavLink to={link.value.href} className={`btn btn-${buttonType.value}`}>
@@ -30,6 +30,7 @@ const Jumbo = ({ fields, context }) => {
     <div>
       <Jumbotron>
         <Text tag="h1" className="display-3" field={heading} />
+        <h2>{membership.level}</h2>
         <Text tag="p" className="lead" field={leadText} />
         <hr className="my-2" />
         <Text field={description} />
