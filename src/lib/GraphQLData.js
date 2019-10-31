@@ -38,6 +38,7 @@ function GraphQLData(query, configuration = {}) {
         newConfiguration.options = newConfiguration.options || {};
         newConfiguration.options.variables = newConfiguration.options.variables || {};
 
+        newConfiguration.options.variables.path = `/sitecore/content/jssreactstarter/Global/Help/${this.props.id}`;
         // if we're in experience editor or preview we need to disable SSR of GraphQL queries
         // because SSR queries are made unauthenticated, so they would have normal mode data = bad
         if (this.props.sitecoreContext && this.props.sitecoreContext.pageState !== 'normal') {
