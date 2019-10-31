@@ -29,7 +29,7 @@ const QuoteWizard = props => {
         steps={steps}
         onStepChange={step =>
           trackingApi
-            .trackEvent([{ eventId: "Next Step" }], trackingApiOptions)
+            .trackEvent([{ eventId: "{0A3E0951-B4E6-4F18-A4BA-7FCBA3973D3F}" }], trackingApiOptions)
             .then(() => console.log("Page event pushed"))
             .catch(error => console.error(error))
         }
