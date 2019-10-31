@@ -4,12 +4,20 @@ import gql from "graphql-tag";
 import GraphQLData from "../../lib/GraphQLData";
 
 const QUERY = gql`
-  query helpQuery($path: String!) {
-    help: item(path: $path) {
-      ... on HelpText {
-        name
-        text {
-          value
+  query helpQuery($id: String!) {
+    help: search(
+      rootItem: "{3DC46B98-234E-464C-9F12-3BF8B13E14D4}"
+      keyword: $id
+    ) {
+      results {
+        items {
+          item {
+            ... on HelpText {
+              text {
+                value
+              }
+            }
+          }
         }
       }
     }
@@ -23,7 +31,8 @@ const HelpPopover = props => {
   const { error, loading } = result;
   let helpText = "";
   if (!loading && !error) {
-    helpText = result.help.text.value;
+    // TODO: safer accessor of help text property
+    helpText = result.help.results.items[0].item.text.value;
   }
 
   const toggle = () => setPopoverOpen(!popoverOpen);
