@@ -9,6 +9,9 @@ import {
 } from "reactstrap";
 
 const Tile = ({ fields }) => {
+  if(!fields){
+    return <h1>This is a Tile component</h1>;
+  }
   const { title, subtitle, image, link, text } = fields;
   return (
     <div style={{width: 300}}>

@@ -1,13 +1,17 @@
-import React from 'react';
-import { Placeholder, VisitorIdentification } from '@sitecore-jss/sitecore-jss-react';
-import { withNamespaces } from 'react-i18next';
-import Helmet from 'react-helmet';
+import React from "react";
+import {
+  Placeholder,
+  VisitorIdentification
+} from "@sitecore-jss/sitecore-jss-react";
+import { withNamespaces } from "react-i18next";
+import Helmet from "react-helmet";
+import { Container, Row, Col } from "reactstrap";
 
 // Using bootstrap is completely optional. It's used here to provide a clean layout for samples,
 // without needing extra CSS in the sample app. Remove it in package.json as well if it's removed here.
-import 'bootstrap/dist/css/bootstrap.css';
-import './assets/app.css';
-import Navigation from './components/Navigation';
+import "bootstrap/dist/css/bootstrap.css";
+import "./assets/app.css";
+import Navigation from "./components/Navigation";
 
 /*
   APP LAYOUT
@@ -22,10 +26,12 @@ const Layout = ({ route, context }) => (
     {/* react-helmet enables setting <head> contents, like title and OG meta tags */}
     <Helmet>
       <title>
-        {(route.fields && route.fields.pageTitle && route.fields.pageTitle.value) || 'Page'}
+        {(route.fields &&
+          route.fields.pageTitle &&
+          route.fields.pageTitle.value) ||
+          "Page"}
       </title>
     </Helmet>
-
     {/*
       VisitorIdentification is necessary for Sitecore Analytics to determine if the visitor is a robot.
       If Sitecore XP (with xConnect/xDB) is used, this is required or else analytics will not be collected for the JSS app.
@@ -34,15 +40,33 @@ const Layout = ({ route, context }) => (
       VI detection only runs once for a given analytics ID, so this is not a recurring operation once cookies are established.
     */}
     <VisitorIdentification />
-
-    <Placeholder name="jss-nav" rendering={route} route={route} context={context} />
-   
-    <Navigation />
-
-    {/* root placeholder for the app, which we add components to using route data */}
-    <div className="container">
-      <Placeholder name="jss-main" rendering={route} route={route} context={context} />
-    </div>
+    {/* <Navigation /> */}
+    <Placeholder
+      name="jss-top"
+      rendering={route}
+      route={route}
+      context={context}
+    />
+    <Container>
+      <Row>
+        <Col xs="3">
+          <Placeholder
+            name="jss-nav"
+            rendering={route}
+            route={route}
+            context={context}
+          />
+        </Col>
+        <Col xs="9">
+          <Placeholder
+            name="jss-main"
+            rendering={route}
+            route={route}
+            context={context}
+          />
+        </Col>
+      </Row>
+    </Container>
   </React.Fragment>
 );
 
