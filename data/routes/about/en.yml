@@ -2,9 +2,10 @@ fields:
   pageTitle: Welcome to Sitecore JSS
 placeholders:
   jss-main:
-  - componentName: Jumbo
+  - componentName: ContentBlock
     fields:
-      heading: Hello11
+      heading: About
+      content: World123123
   - componentName: ContentBlock
     fields:
       heading: Second block
